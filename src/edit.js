@@ -51,13 +51,14 @@ export default function Edit( { attributes, setAttributes } ) {
 	// Query the API
 	const searchLyrics = (e) => {
 		e.preventDefault();
-		console.log(band)
+		// Validate if string is empty.
+		// we need the two fields for the APIs to work correctly
 		if ('' === band.trim() || '' === song.trim()) {
 			saveError(true);
 			return;
 		}
 		saveError(false);
-		// Send to App
+		// Send to Edit
 		saveLyric(search);
 	};
 
@@ -84,14 +85,14 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
-		<div>
-			{error ? 'error' : null}
-			<form onSubmit={searchLyrics}>
-				<input className="components-text-control__input" type="text" name="band" value={band} onChange={updateState} placeholder="Band" />
-				<input className="components-text-control__input" type="text" name="song" value={song} onChange={updateState} placeholder="Song" />
-				<input type="submit" value="Submit" />
-			</form>
-		</div>
+			<div>
+				{error ? 'error' : null}
+				<form onSubmit={searchLyrics}>
+					<input className="components-text-control__input" type="text" name="band" value={band} onChange={updateState} placeholder="Band" />
+					<input className="components-text-control__input" type="text" name="song" value={song} onChange={updateState} placeholder="Song" />
+					<input type="submit" value="Submit" />
+				</form>
+			</div>
 			<div className="band-container">
 			{ 'Metal' === genre ? (
 				<Fragment>
