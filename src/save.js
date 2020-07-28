@@ -14,13 +14,18 @@ import { __ } from '@wordpress/i18n';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
 	return (
-		<p>
-			{ __(
-				'Metal Lyrics – hello from the saved content!',
-				'create-block'
-			) }
-		</p>
+		<div className="band-container">
+				<div>
+					<h2>The Band</h2>
+					<div><img className="band-pic" src={attributes.bandPic} /></div>
+					<div className="band-info">{attributes.bandInfo}</div>
+				</div>
+				<div>
+					<h2>The Lyrics</h2>
+					<div className="song-lyrics">{attributes.songLyrics}</div>
+				</div>
+		</div>
 	);
 }

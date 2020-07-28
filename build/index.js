@@ -2451,7 +2451,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function Edit(_ref) {
   var attributes = _ref.attributes,
-      className = _ref.className,
       setAttributes = _ref.setAttributes;
 
   var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])({
@@ -2467,23 +2466,18 @@ function Edit(_ref) {
       searchLyric = _useState4[0],
       saveLyric = _useState4[1];
 
-  var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])(''),
+  var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_3___default()(_useState5, 2),
-      lyric = _useState6[0],
-      saveTheLyric = _useState6[1];
-
-  var _useState7 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
-      _useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_3___default()(_useState7, 2),
-      error = _useState8[0],
-      saveError = _useState8[1];
+      error = _useState6[0],
+      saveError = _useState6[1];
 
   var band = search.band,
       song = search.song;
 
-  var _useState9 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])('Metal'),
-      _useState10 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_3___default()(_useState9, 2),
-      genre = _useState10[0],
-      setGenre = _useState10[1]; // Function for each input for read it's value.
+  var _useState7 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["useState"])('Metal'),
+      _useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_3___default()(_useState7, 2),
+      genre = _useState8[0],
+      setGenre = _useState8[1]; // Function for each input for read it's value.
 
 
   var updateState = function updateState(e) {
@@ -2539,7 +2533,7 @@ function Edit(_ref) {
                 setAttributes({
                   bandPic: info.data.artists[0].strArtistThumb
                 });
-                console.log(info.data.artists[0]);
+                setGenre(info.data.artists[0].strStyle);
 
               case 13:
               case "end":
@@ -2577,14 +2571,16 @@ function Edit(_ref) {
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("input", {
     type: "submit",
     value: "Submit"
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Band"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("img", {
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
+    className: "band-container"
+  }, 'Metal' === genre ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Band"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("img", {
     className: "band-pic",
     src: attributes.bandPic
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
     className: "band-info"
-  }, attributes.bandInfo)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
-    className: "song_lyrics"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Lyrics"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, attributes.songLyrics))));
+  }, attributes.bandInfo)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Lyrics"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
+    className: "song-lyrics"
+  }, attributes.songLyrics))) : 'This is not a Metal Song 😕!'));
 }
 
 /***/ }),
@@ -2685,18 +2681,15 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
   },
   attributes: {
     bandInfo: {
-      type: 'array',
-      source: 'html',
+      type: 'text',
       selector: '.band-info'
     },
     bandPic: {
       type: 'url',
-      source: 'html',
       selector: '.band-pic'
     },
     songLyrics: {
-      type: 'array',
-      source: 'html',
+      type: 'text',
       selector: '.song-lyrics'
     }
   },
@@ -2746,8 +2739,18 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
-function save() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Metal Lyrics – hello from the saved content!', 'create-block'));
+function save(_ref) {
+  var attributes = _ref.attributes;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "band-container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, "The Band"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+    className: "band-pic",
+    src: attributes.bandPic
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "band-info"
+  }, attributes.bandInfo)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, "The Lyrics"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "song-lyrics"
+  }, attributes.songLyrics)));
 }
 
 /***/ }),

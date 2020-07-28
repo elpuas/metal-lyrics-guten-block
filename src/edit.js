@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { useState, useEffect } from '@wordpress/element'
+import { Fragment, useState, useEffect } from '@wordpress/element'
 import axios from 'axios';
 
 /**
@@ -26,14 +26,13 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, className, setAttributes } ) {
+export default function Edit( { attributes, setAttributes } ) {
 	const [search, saveSearch] = useState({
 		band: '',
 		song: '',
 	});
 
 	const [searchLyric, saveLyric] = useState({});
-	const [lyric, saveTheLyric] = useState('');
 	const [error, saveError] = useState(false);
 	const { band, song } = search;
 	const [genre, setGenre] = useState('Metal');
@@ -77,7 +76,7 @@ export default function Edit( { attributes, className, setAttributes } ) {
 			setAttributes({ songLyrics: lyric.data.lyrics});
 			setAttributes({ bandInfo: info.data.artists[0].strBiographyEN});
 			setAttributes({bandPic: info.data.artists[0].strArtistThumb});
-			console.log(info.data.artists[0]);
+			setGenre(info.data.artists[0].strStyle);
 		};
 		// Invoke the function
 		searchApiLyric();
@@ -93,18 +92,22 @@ export default function Edit( { attributes, className, setAttributes } ) {
 				<input type="submit" value="Submit" />
 			</form>
 		</div>
-			<div>
-				<div>
-					<h2>The Band</h2>
-					{/* render Band Info from API */}
-					<div><img className="band-pic" src={attributes.bandPic} /></div>
-				<div className="band-info">{attributes.bandInfo}</div>
-				</div>
-				<div className="song_lyrics">
-					<h2>The Lyrics</h2>
-					{/* render song from API */}
-					<div>{attributes.songLyrics}</div>
-				</div>
+			<div className="band-container">
+			{ 'Metal' === genre ? (
+				<Fragment>
+					<div>
+						<h2>The Band</h2>
+						<div><img className="band-pic" src={attributes.bandPic} /></div>
+						<div className="band-info">{attributes.bandInfo}</div>
+					</div>
+					<div>
+						<h2>The Lyrics</h2>
+						<div className="song-lyrics">{attributes.songLyrics}</div>
+					</div>
+				</Fragment>
+			) : (
+				'This is not a Metal Song 😕!'
+			)}
 			</div>
 		</>
 	);
