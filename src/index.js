@@ -69,16 +69,20 @@ registerBlockType( 'create-block/metal-lyrics', {
 	},
 
 	attributes: {
-		band: {
-			type: 'string',
-			source: 'text',
-			selector: '.band_name',
+		bandInfo: {
+			type: 'array',
+			source: 'html',
+			selector: '.band-info',
 		},
-
-		song: {
-			type: 'string',
-			source: 'text',
-			selector: '.song_name',
+		bandPic: {
+			type: 'url',
+			source: 'html',
+			selector: '.band-pic',
+		},
+		songLyrics: {
+			type: 'array',
+			source: 'html',
+			selector: '.song-lyrics',
 		}
 	},
 

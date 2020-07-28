@@ -4,7 +4,6 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { TextControl } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element'
 import axios from 'axios';
 
@@ -28,36 +27,83 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, className, setAttributes } ) {
+	const [search, saveSearch] = useState({
+		band: '',
+		song: '',
+	});
+
+	const [searchLyric, saveLyric] = useState({});
+	const [lyric, saveTheLyric] = useState('');
+	const [error, saveError] = useState(false);
+	const { band, song } = search;
+	const [genre, setGenre] = useState('Metal');
+
+
+	// Function for each input for read it's value.
+	const updateState = (e) => {
+		// Since this is an object we get a copy of `search`
+		// and with e.target.name add the new content.
+		saveSearch({
+			...search,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	// Query the API
 	const searchLyrics = (e) => {
 		e.preventDefault();
-		console.log('BAND',  attributes.band);
-		console.log('SONG',  attributes.song);
+		console.log(band)
+		if ('' === band.trim() || '' === song.trim()) {
+			saveError(true);
+			return;
+		}
+		saveError(false);
+		// Send to App
+		saveLyric(search);
 	};
+
+	useEffect(() => {
+		// Return early and often.
+		if (Object.keys(searchLyric).length === 0) return;
+
+		// Create a Async/Await function to fetch API
+		const searchApiLyric = async () => {
+			const { band, song } = searchLyric;
+			const url = `https://api.lyrics.ovh/v1/${band}/${song}`;
+			const url2 = `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${band}`;
+
+			const [lyric, info] = await Promise.all([axios(url), axios(url2)]);
+
+			setAttributes({ songLyrics: lyric.data.lyrics});
+			setAttributes({ bandInfo: info.data.artists[0].strBiographyEN});
+			setAttributes({bandPic: info.data.artists[0].strArtistThumb});
+			console.log(info.data.artists[0]);
+		};
+		// Invoke the function
+		searchApiLyric();
+	}, [searchLyric]); // Check any change on state
+
 	return (
 		<>
+		<div>
+			{error ? 'error' : null}
 			<form onSubmit={searchLyrics}>
-				<TextControl
-				className='band_name'
-				label={ __( 'Name', 'create-block-metal-lyrics-block' ) }
-				value={ attributes.band }
-				onChange={ ( val ) => setAttributes( { band: val } ) }
-				/>
-				<TextControl
-				className='song_name'
-				label={ __( 'Song', 'create-block-metal-lyrics-block' ) }
-				value={ attributes.song }
-				onChange={ ( val ) => setAttributes( { song: val } ) }
-				/>
+				<input className="components-text-control__input" type="text" name="band" value={band} onChange={updateState} placeholder="Band" />
+				<input className="components-text-control__input" type="text" name="song" value={song} onChange={updateState} placeholder="Song" />
 				<input type="submit" value="Submit" />
 			</form>
+		</div>
 			<div>
-				<div className="band_info">
+				<div>
 					<h2>The Band</h2>
-					<div>Band Info</div>
+					{/* render Band Info from API */}
+					<div><img className="band-pic" src={attributes.bandPic} /></div>
+				<div className="band-info">{attributes.bandInfo}</div>
 				</div>
 				<div className="song_lyrics">
 					<h2>The Lyrics</h2>
-					<div>Song Lyrics</div>
+					{/* render song from API */}
+					<div>{attributes.songLyrics}</div>
 				</div>
 			</div>
 		</>
