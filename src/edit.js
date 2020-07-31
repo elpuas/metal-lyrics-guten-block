@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import { Spinner } from '@wordpress/components';
 import { Fragment, useState, useEffect } from '@wordpress/element'
 import axios from 'axios';
 
@@ -86,7 +87,8 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<div>
-				{error ? 'error' : null}
+				{error ? 'error, fields cannot be empty' : null}
+				<h4>Search For Lyrics and Band Info</h4>
 				<form onSubmit={searchLyrics}>
 					<input className="components-text-control__input" type="text" name="band" value={band} onChange={updateState} placeholder="Band" />
 					<input className="components-text-control__input" type="text" name="song" value={song} onChange={updateState} placeholder="Song" />
@@ -94,21 +96,31 @@ export default function Edit( { attributes, setAttributes } ) {
 				</form>
 			</div>
 			<div className="band-container">
-			{ 'Metal' === genre ? (
+			{ ! attributes.bandInfo ? '' : 'Metal' === genre ? (
 				<Fragment>
 					<div>
-						<h2>The Band</h2>
-						<div><img className="band-pic" src={attributes.bandPic} /></div>
-						<div className="band-info">{attributes.bandInfo}</div>
+						{ attributes.bandInfo ?
+						<Fragment>
+							<h2>The Band</h2>
+							<div><img className="band-pic" src={attributes.bandPic} /></div>
+							<div className="band-info">{attributes.bandInfo}</div>
+						</Fragment>
+						: <Spinner />
+						}
 					</div>
 					<div>
-						<h2>The Lyrics</h2>
-						<div className="song-lyrics">{attributes.songLyrics}</div>
+						{ attributes.songLyrics ?
+							<Fragment>
+							<h2>The Lyrics</h2>
+							<div className="song-lyrics">{attributes.songLyrics}</div>
+							</Fragment>
+							: <Spinner />
+						}
 					</div>
 				</Fragment>
 			) : (
 				'This is not a Metal Song 😕!'
-			)}
+			) }
 			</div>
 		</>
 	);

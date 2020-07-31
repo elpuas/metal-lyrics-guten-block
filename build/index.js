@@ -2385,6 +2385,46 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./src/Icon.js":
+/*!*********************!*\
+  !*** ./src/Icon.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+    id: "Capa_1",
+    style: {
+      "enableBackground": "new 0 0 512 512"
+    },
+    version: "1.1",
+    viewBox: "0 0 512 512",
+    xmlns: "http://www.w3.org/2000/svg",
+    x: "0px",
+    y: "0px",
+    xmlSpace: "preserve"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("g", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("g", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("g", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M477,110c19.299,0,35-15.701,35-35s-15.701-35-35-35c-1.844,0-3.654,0.146-5.422,0.422C471.854,38.654,472,36.844,472,35\r c0-19.299-15.701-35-35-35s-35,15.701-35,35c0,12.646,6.742,23.745,16.821,29.896l-23.697,23.697\r c-1.324-1.252-2.662-2.494-4.027-3.719C354.145,51.727,305.813,32.5,258.313,32.009c-0.199-0.006-0.396-0.009-0.596-0.009h-1.432\r c-0.773,0-1.533,0.055-2.284,0.14c-0.751-0.086-1.511-0.14-2.284-0.14h-1.432c-0.199,0-0.396,0.003-0.594,0.009\r c-47.503,0.489-95.831,19.716-132.786,52.864c-0.66,0.592-1.304,1.195-1.954,1.793L93.58,65.295\r C103.987,59.286,111,48.124,111,35.366C111,16.195,94.628,0,75.25,0C56.364,0,41,15.865,41,35.366\r c0,1.778,0.137,3.524,0.399,5.231C39.323,40.211,37.186,40,35,40C15.701,40,0,55.701,0,75s15.701,35,35,35\r c12.646,0,23.745-6.742,29.896-16.819l23.434,23.433c-5.861,8.169-11.01,16.721-15.395,25.629\r C61.698,165.07,56,189.055,56,213.532c0,21.64,6.004,50.829,15.224,75.857c-6.893,6.292-12.265,14.212-15.518,23.139\r c-5.614,15.405-4.47,32.57,3.137,47.094c0.052,0.098,0.103,0.194,0.156,0.291l13.44,24.658C75.943,391,82.679,395,90,395h20.403\r L85.99,418.977C79.859,408.813,68.711,402,56,402c-19.299,0-35,15.701-35,35s15.701,35,35,35c1.844,0,3.654-0.146,5.422-0.422\r C61.146,473.346,61,475.156,61,477c0,19.299,15.701,35,35,35s35-15.701,35-35c0-12.58-6.674-23.627-16.664-29.797l31.951-31.381\r c0.902,2.342,1.546,4.816,1.885,7.394l3.999,30.394c0.574,4.365,2.573,8.419,5.687,11.533C160.607,467.892,186.66,492,254,492\r s93.393-24.108,96.142-26.857c3.114-3.114,5.113-7.168,5.687-11.533l3.999-30.394c0.504-3.834,1.681-7.439,3.39-10.713\r l34.601,34.601C387.742,453.255,381,464.354,381,477c0,19.299,15.701,35,35,35s35-15.701,35-35c0-1.844-0.146-3.654-0.422-5.422\r c1.768,0.276,3.578,0.422,5.422,0.422c19.299,0,35-15.701,35-35s-15.701-35-35-35c-12.646,0-23.745,6.742-29.896,16.819\r L402.285,395h15.72c0.054,0,0.108,0,0.162-0.002c7.717-0.06,14.393-4.492,17.674-10.94l13.161-24.146\r c0.053-0.097,0.105-0.193,0.156-0.291c7.607-14.525,8.751-31.69,3.137-47.094c-5.615-15.404-17.534-27.808-32.703-34.031\r c-10.22-4.194-21.903,0.692-26.095,10.912c-4.192,10.219,0.693,21.902,10.912,26.094c4.849,1.991,8.508,5.798,10.303,10.722\r c1.779,4.882,1.45,10.101-0.925,14.714L406.123,355H392c-36.224,0-67.104,27.083-71.83,62.997l-2.848,21.646\r C308.99,444.204,289.549,452,254,452s-54.99-7.796-63.322-12.357l-2.848-21.646C183.104,382.083,152.224,355,116,355h-14.123\r l-7.664-14.061c-2.375-4.613-2.704-9.832-0.925-14.714c1.795-4.924,5.453-8.732,10.303-10.722\r c5.058-2.075,9.046-6.129,11.036-11.221c1.991-5.09,1.811-10.775-0.499-15.73C102.227,263.014,96,231.481,96,213.532\r C96,139.748,169.896,72.296,251.042,72h0.674c0.773,0,1.533-0.055,2.284-0.14c0.751,0.086,1.511,0.14,2.284,0.14h0.667\r C338.102,72.288,412,139.743,412,213.532c0,11.046,8.954,20,20,20c11.046,0,20-8.954,20-20c0-24.476-5.698-48.462-16.935-71.287\r c-3.968-8.061-8.555-15.834-13.733-23.292l25.772-25.772C453.255,103.258,464.354,110,477,110z"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M227.383,367L256,382l28.617-15c15.773,0-16.098-58.817-16.098-58.817c-6.914-6.911-18.124-6.911-25.038,0\r C243.481,308.183,211.61,367,227.383,367z"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M206,240h-15.806c-11.754,0-25.468-5-36.194-5c-10.87,0-18,2.089-18,13c0,22.091,7.844,51,31.068,51\r C190.293,299,231,281.472,231,259.381C231,242.675,220.946,240.237,206,240z"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M371,249c0-9.958-6.292-12.918-15.332-13c-11.014-0.1-26.106,4-38.862,4H302c-15.495,0.145-26,2.305-26,19.381\r C276,281.472,316.707,299,339.932,299C363.156,299,371,271.091,371,249z"
+  })))));
+});
+
+/***/ }),
+
 /***/ "./src/edit.js":
 /*!*********************!*\
   !*** ./src/edit.js ***!
@@ -2407,10 +2447,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -2426,6 +2468,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+
 
 
 
@@ -2488,15 +2531,15 @@ function Edit(_ref) {
 
 
   var searchLyrics = function searchLyrics(e) {
-    e.preventDefault();
-    console.log(band);
+    e.preventDefault(); // Validate if string is empty.
+    // we need the two fields for the APIs to work correctly
 
     if ('' === band.trim() || '' === song.trim()) {
       saveError(true);
       return;
     }
 
-    saveError(false); // Send to App
+    saveError(false); // Send to Edit
 
     saveLyric(search);
   };
@@ -2517,7 +2560,7 @@ function Edit(_ref) {
                 url = "https://api.lyrics.ovh/v1/".concat(band, "/").concat(song);
                 url2 = "https://www.theaudiodb.com/api/v1/json/1/search.php?s=".concat(band);
                 _context.next = 5;
-                return Promise.all([axios__WEBPACK_IMPORTED_MODULE_6___default()(url), axios__WEBPACK_IMPORTED_MODULE_6___default()(url2)]);
+                return Promise.all([axios__WEBPACK_IMPORTED_MODULE_7___default()(url), axios__WEBPACK_IMPORTED_MODULE_7___default()(url2)]);
 
               case 5:
                 _yield$Promise$all = _context.sent;
@@ -2552,7 +2595,7 @@ function Edit(_ref) {
     searchApiLyric();
   }, [searchLyric]); // Check any change on state
 
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, error ? 'error' : null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("form", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, error ? 'error, fields cannot be empty' : null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h4", null, "Search For Lyrics and Band Info"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("form", {
     onSubmit: searchLyrics
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("input", {
     className: "components-text-control__input",
@@ -2573,14 +2616,14 @@ function Edit(_ref) {
     value: "Submit"
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
     className: "band-container"
-  }, 'Metal' === genre ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Band"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("img", {
+  }, !attributes.bandInfo ? '' : 'Metal' === genre ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, attributes.bandInfo ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Band"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("img", {
     className: "band-pic",
     src: attributes.bandPic
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
     className: "band-info"
-  }, attributes.bandInfo)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Lyrics"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
+  }, attributes.bandInfo)) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__["Spinner"], null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null, attributes.songLyrics ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("h2", null, "The Lyrics"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", {
     className: "song-lyrics"
-  }, attributes.songLyrics))) : 'This is not a Metal Song 😕!'));
+  }, attributes.songLyrics)) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__["Spinner"], null))) : 'This is not a Metal Song 😕!'));
 }
 
 /***/ }),
@@ -2611,8 +2654,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icon */ "./src/Icon.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/save.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -2633,6 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+
 
 
 /**
@@ -2670,7 +2715,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
    * An icon property should be specified to make it easier to identify a block.
    * These can be any of WordPress’ Dashicons, or a custom svg element.
    */
-  icon: 'smiley',
+  icon: _Icon__WEBPACK_IMPORTED_MODULE_3__["default"],
 
   /**
    * Optional block extended support features.
@@ -2697,12 +2742,12 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
   /**
    * @see ./edit.js
    */
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
 
   /**
    * @see ./save.js
    */
-  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 
 /***/ }),
@@ -2777,6 +2822,17 @@ function save(_ref) {
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!*********************************************!*\
+  !*** external {"this":["wp","components"]} ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["components"]; }());
+
+/***/ }),
+
 /***/ "@wordpress/element":
 /*!******************************************!*\
   !*** external {"this":["wp","element"]} ***!
@@ -2796,6 +2852,17 @@ function save(_ref) {
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["i18n"]; }());
+
+/***/ }),
+
+/***/ "react":
+/*!*********************************!*\
+  !*** external {"this":"React"} ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["React"]; }());
 
 /***/ })
 

@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:     Metal Lyrics
- * Description:     Example block written with ESNext standard and JSX support – build step required.
+ * Description:     A Metal Lyric Search Block, that will display the lyrics and the Band Info, for Headbangers only.
  * Version:         0.1.0
- * Author:          The WordPress Contributors
+ * Author:          Alfredo Navas <elpuas@gmail.com>
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     create-block
