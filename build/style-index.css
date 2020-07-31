@@ -6,8 +6,26 @@
  */
 .wp-block-create-block-metal-lyrics {
   background-color: var(--wp-admin-theme-color);
-  color: #fff;
+  color: black;
   padding: 2px; }
+  .wp-block-create-block-metal-lyrics.band-container {
+    max-width: 800px !important; }
+    .wp-block-create-block-metal-lyrics.band-container h2 span {
+      background-image: linear-gradient(180deg, transparent 65%, red 0);
+      background-size: 100% 100%;
+      background-repeat: no-repeat; }
+  .wp-block-create-block-metal-lyrics .flex-container .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%; }
+  .wp-block-create-block-metal-lyrics .flex-container .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1; }
+    .wp-block-create-block-metal-lyrics .flex-container .column.band-info {
+      padding-right: 10px; }
 
 
 /*# sourceMappingURL=style-index.css.map*/

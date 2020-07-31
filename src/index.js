@@ -45,7 +45,7 @@ registerBlockType( 'create-block/metal-lyrics', {
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
 	description: __(
-		'Example block written with ESNext standard and JSX support – build step required.',
+		'Metal Lyric Search Block.',
 		'create-block'
 	),
 

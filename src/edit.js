@@ -4,8 +4,20 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { Spinner } from '@wordpress/components';
-import { Fragment, useState, useEffect } from '@wordpress/element'
+
+import {
+	Spinner,
+	Card,
+    CardBody,
+	CardHeader
+ } from '@wordpress/components';
+
+import {
+	Fragment,
+	useState,
+	useEffect
+} from '@wordpress/element';
+
 import axios from 'axios';
 
 /**
@@ -86,15 +98,17 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
-			<div>
+			<Card isElevated>
+				<CardBody isShady>
 				{error ? 'error, fields cannot be empty' : null}
-				<h4>Search For Lyrics and Band Info</h4>
+				<CardHeader>Search For Lyrics and Band Info</CardHeader>
 				<form onSubmit={searchLyrics}>
 					<input className="components-text-control__input" type="text" name="band" value={band} onChange={updateState} placeholder="Band" />
 					<input className="components-text-control__input" type="text" name="song" value={song} onChange={updateState} placeholder="Song" />
-					<input type="submit" value="Submit" />
+					<input className='components-button is-primary' type="submit" value="Search" />
 				</form>
-			</div>
+				</CardBody>
+			</Card>
 			<div className="band-container">
 			{ ! attributes.bandInfo ? '' : 'Metal' === genre ? (
 				<Fragment>
@@ -102,8 +116,8 @@ export default function Edit( { attributes, setAttributes } ) {
 						{ attributes.bandInfo ?
 						<Fragment>
 							<h2>The Band</h2>
-							<div><img className="band-pic" src={attributes.bandPic} /></div>
-							<div className="band-info">{attributes.bandInfo}</div>
+								<div><img className="band-pic" src={attributes.bandPic} /></div>
+								<div className="band-info">{attributes.bandInfo}</div>
 						</Fragment>
 						: <Spinner />
 						}

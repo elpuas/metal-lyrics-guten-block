@@ -18,12 +18,19 @@ export default function save( { attributes } ) {
 	return (
 		<div className="band-container">
 				<div>
-					<h2>The Band</h2>
-					<div><img className="band-pic" src={attributes.bandPic} /></div>
-					<div className="band-info">{attributes.bandInfo}</div>
+					<h2><span>The Band 💀</span></h2>
+					<div className="flex-container">
+						<div className="row">
+							<div className="column">
+								<img className="band-pic" src={attributes.bandPic} />
+							</div>
+							<div className="band-info column">{attributes.bandInfo}</div>
+						</div>
+					</div>
+
 				</div>
 				<div>
-					<h2>The Lyrics</h2>
+					<h2><span>The Lyrics 🤟</span></h2>
 					<div className="song-lyrics">{attributes.songLyrics}</div>
 				</div>
 		</div>
