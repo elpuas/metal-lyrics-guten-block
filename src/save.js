@@ -17,22 +17,17 @@ import { __ } from '@wordpress/i18n';
 export default function save( { attributes } ) {
 	return (
 		<div className="band-container">
-				<div>
-					<h2><span>The Band 💀</span></h2>
-					<div className="flex-container">
-						<div className="row">
-							<div className="column">
-								<img className="band-pic" src={attributes.bandPic} />
-							</div>
-							<div className="band-info column">{attributes.bandInfo}</div>
-						</div>
-					</div>
-
+			<div>
+				<h2><span>The Band Info 💀</span></h2>
+				<div className="flex-container">
+					<img className="band-pic" src={attributes.bandPic} />
+					{attributes.bandInfo}
 				</div>
-				<div>
-					<h2><span>The Lyrics 🤟</span></h2>
-					<div className="song-lyrics">{attributes.songLyrics}</div>
 				</div>
+			<div>
+				<h2><span>The Lyrics 🤟</span></h2>
+				<div className="song-lyrics">{attributes.songLyrics}</div>
+			</div>
 		</div>
 	);
 }

@@ -115,9 +115,10 @@ export default function Edit( { attributes, setAttributes } ) {
 					<div>
 						{ attributes.bandInfo ?
 						<Fragment>
-							<h2>The Band</h2>
-								<div><img className="band-pic" src={attributes.bandPic} /></div>
-								<div className="band-info">{attributes.bandInfo}</div>
+							<h2><span>The Band Info 💀</span></h2>
+							<div className="band-info">
+								<img className="band-pic" src={attributes.bandPic} />{attributes.bandInfo}
+							</div>
 						</Fragment>
 						: <Spinner />
 						}
@@ -125,7 +126,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<div>
 						{ attributes.songLyrics ?
 							<Fragment>
-							<h2>The Lyrics</h2>
+							<h2><span>The Lyrics 🤟</span></h2>
 							<div className="song-lyrics">{attributes.songLyrics}</div>
 							</Fragment>
 							: <Spinner />

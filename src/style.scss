@@ -18,25 +18,11 @@
     		background-size: 100% 100%;
     		background-repeat: no-repeat;
 		}
-	}
 
-	.flex-container {
-		.row {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			width: 100%;
-		  }
-
-		  .column {
-			display: flex;
-			flex-direction: column;
-			flex-basis: 100%;
-			flex: 1;
-
-			&.band-info {
-				padding-right: 10px;
-			}
-		  }
+		img {
+			float: left;
+			padding: 10px;
+			max-width: 300px;
+		}
 	}
 }
